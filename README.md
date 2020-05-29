@@ -7,5 +7,7 @@
 >
 
 Sse `docker-compose up` inside the docker dir to  serve
-#### Issues i while using `docker-compose up` for the first time (it could install packages permanently...) 
- - I had to use `docker-compose exec app compose install` to install all packages 
+### for the first time starting this docker: 
+ 1. open shell and navidate to the ~/cookio-backend/doocker folder
+ 2. use `docker-compose exec app compose install` to install all packages 
+ 3. use `docker-compose exec app php artisan key:generate` to generate the keys for the database  
