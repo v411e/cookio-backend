@@ -8,3 +8,4 @@ RUN docker-php-ext-install pdo_mysql zip \
     && php composer-setup.php \
     && php -r "unlink('composer-setup.php');" \
     && mv composer.phar /usr/local/bin/composer
+RUN chown -R www-data:www-data /var/www
