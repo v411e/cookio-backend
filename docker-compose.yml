@@ -1,0 +1,23 @@
+version: '3.7'
+
+volumes:
+  db: {}
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: development.dockerfile
+    env_file: .env
+    volumes:
+      - .:/app
+    ports:
+      - 8080:80
+  db:
+    image: postgres:12-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - db:/var/lib/postgresql/data
