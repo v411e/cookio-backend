@@ -2,6 +2,7 @@
 
 //use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Person;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,6 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-Route::get('/product', function () {
-    $person = [
-        'company' => 'Alpecin',
-        'sort' => 'shampoo',
-    ];
+Route::get('/person/{person}', function (Person $person) {
     return $person;
 });
