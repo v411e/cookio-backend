@@ -7,7 +7,6 @@
 >
 
 Sse `docker-compose up` inside the docker dir to  serve
-### for the first time starting this docker: 
- 1. open shell and navidate to the ~/cookio-backend/doocker folder
- 2. use `docker-compose exec app compose install` to install all packages 
- 3. use `docker-compose exec app php artisan key:generate` to generate the keys for the database  
+### for the first time starting this project:
+1. migrate your database with `docker-compose exec app php artisan migrate`
+2. `docker-compose exec app php artisan db:seed`
